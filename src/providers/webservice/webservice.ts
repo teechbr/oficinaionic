@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 /*
   Generated class for the WebserviceProvider provider.
@@ -16,7 +15,7 @@ export class WebserviceProvider {
   }
 
   getAll(){
-    return this.http.get('http://xbus.com.br/api/cities.json');
+    return this.http.get('https://xbus.com.br/api/cities.json');
   }
 
 }

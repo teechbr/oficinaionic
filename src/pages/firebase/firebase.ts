@@ -18,13 +18,7 @@ export class FirebasePage {
   item:any;
   items: FirebaseListObservable<any[]>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public db: AngularFireDatabase,public actionSheetCtrl: ActionSheetController,public toastCtrl: ToastController) {
-    this.items = db.list('/list',
-  {query:
-    {
-      orderByChild: 'nome',
-      orderByValue: true
-    }
-  });
+    this.items = db.list('/list');
     this.item = {nome:''};
   }
 
