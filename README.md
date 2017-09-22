@@ -10,7 +10,7 @@ Seja bem vindo a oficina do Ionic Framework!
 - Versão do Aplicativo
 - Lista simples de elementos
 
-### Comandos para baixar o projeto exemplo:
+### Comandos para utilizar o projeto exemplo:
 
 Após ter instalado os programas obrigatórios para o desenvolvimento com o Ionic Framework (Git, Node, Ionic, Cordova), basta seguir as linhas de comandos a seguir:
 
