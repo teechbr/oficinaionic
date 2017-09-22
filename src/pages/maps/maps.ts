@@ -5,9 +5,7 @@ import {
   GoogleMaps,
   GoogleMap,
   GoogleMapsEvent,
-  GoogleMapOptions,
-  Marker,
-  MarkerOptions
+  GoogleMapOptions
  } from '@ionic-native/google-maps';
 
 /**
@@ -28,18 +26,32 @@ export class MapsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps,public alertCtrl: AlertController, public geolocation: Geolocation) {
     this.geolocation.getCurrentPosition({ enableHighAccuracy: true }).then((resp) => {
       this.loadMap(resp.coords.latitude, resp.coords.longitude);
+      this.addMaker(resp.coords.latitude, resp.coords.longitude);
     }).catch((error) => {
       this.showAlert('Error getting location', error);
     }); 
   }
 
-  clickMaker(){
-    console.log("start");
-    this.map.addEventListener("click").subscribe(event => {
-      console.log(event);
-      this.showAlert("Position",event);
+  addMaker(lat:number,lng:number){
+    this.map.one(GoogleMapsEvent.MAP_READY)
+    .then(() => {
+      this.map.addMarker({
+          title: 'Posição Atual',
+          icon: 'red',
+          animation: 'DROP',
+          position: {
+            lat: lat,
+            lng: lng
+          }
+        })
+        .then(marker => {
+          marker.on(GoogleMapsEvent.MARKER_CLICK)
+            .subscribe(() => {
+              this.showAlert("Localização!","Latitude: "+lat+"<br/>Longitude: "+lng);
+            });
+        });
+
     });
-    console.log("end");
   }
 
   loadMap(lat:number, lng:number) {
@@ -54,28 +66,7 @@ export class MapsPage {
         tilt: 30
       }
     };
-
     this.map = this.googleMaps.create(this.mapElement, mapOptions);
-    // Wait the MAP_READY before using any methods.
-    this.map.one(GoogleMapsEvent.MAP_READY)
-      .then(() => {
-        this.map.addMarker({
-            title: 'Posição Atual',
-            icon: 'red',
-            animation: 'DROP',
-            position: {
-              lat: lat,
-              lng: lng
-            }
-          })
-          .then(marker => {
-            marker.on(GoogleMapsEvent.MARKER_CLICK)
-              .subscribe(() => {
-                this.showAlert("Localização!","Latitude: "+lat+"<br/>Longitude: "+lng);
-              });
-          });
-
-      });
   }
 
   showAlert(title:string, subTitle:string ) {
