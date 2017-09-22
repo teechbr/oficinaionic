@@ -1,26 +1,23 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+Seja bem vindo a oficina do Ionic Framework!
 
-## How to use this template
+## Projeto base com os alguns componentes já implementados:
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+- Câmera
+- Leitor de Código de Barras
+- Banco de Dados não relacional Firebase
+- Consumir um WebService em PHP
+- Google Maps e GPS
+- Versão do Aplicativo
+- Lista simples de elementos
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+### Comandos para baixar o projeto exemplo:
 
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start mySideMenu sidemenu
-```
-
-Then, to run it, cd into `mySideMenu` and run:
+Após ter instalado os programas obrigatórios para o desenvolvimento com o Ionic Framework (Git, Node, Ionic, Cordova), basta seguir as linhas de comandos a seguir:
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ git clone https://github.com/teechbr/minicursocatolica.git 'nomeDaPasta'
+$ npm update
+$ ionic serve
 ```
 
-Substitute ios for android if not on a Mac.
-
+Pronto! A aplicação deverá abrir no seu navegador padrão. Lembrando que componentes que usam funções nativas, como: câmera, GPS etc, não executará no seu navegador, pois a biblioteca cordova só executará em um dispositível, após ter gerado o build da aplicação e instalação do mesmo.
