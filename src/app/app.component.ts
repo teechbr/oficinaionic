@@ -25,7 +25,7 @@ export class MyApp {
       { title: 'Leitor de Códigos', component: 'BarcodePage', icon: 'barcode' },
       { title: 'Firebase', component: 'FirebasePage', icon: 'flame' },
       { title: 'Webservice', component: 'WebservicePage', icon: 'cloud' },
-      { title: 'Google Maps e GPS', component: 'Maps', icon: 'map' },
+      { title: 'Google Maps e GPS', component: 'MapsPage', icon: 'map' },
       { title: 'Versão do APP', component: 'VersionPage', icon: 'refresh-circle' },
       { title: 'Lista Simples', component: 'ListPage', icon: 'menu' },
     ];

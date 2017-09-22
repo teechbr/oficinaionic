@@ -1,19 +1,19 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Firebase</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Firebase</ion-title>
+	</ion-navbar>
 </ion-header>
 <ion-content padding>
-  <label>Nome</label>
-  <ion-input [(ngModel)]="item.nome"></ion-input><br/>
-  <button ion-button (click)="insert()" small>Salvar</button>
-  <ion-list>
-    <ion-item *ngFor="let item of items | async" (click)="acoes(item)">
-      {{item.nome}}
-    </ion-item>
-    <ion-item *ngIf="(items | async)?.length == 0">Nenhum item encontrado!</ion-item>
-  </ion-list>
+	<label>Nome</label>
+	<ion-input [(ngModel)]="item.nome"></ion-input><br/>
+	<button ion-button (click)="insert()" small>Salvar</button>
+	<ion-list>
+		<ion-item *ngFor="let item of items | async" (click)="acoes(item)">
+			{{item.nome}}
+		</ion-item>
+		<ion-item *ngIf="(items | async)?.length == 0">Nenhum item encontrado!</ion-item>
+	</ion-list>
 </ion-content>
