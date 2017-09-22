@@ -1,0 +1,19 @@
+<!--
+  Generated template for the BarcodePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Leitor de Códigos</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button (click)="barcode()" ion-button>Leitor</button><br/>
+  <label>Texto: </label><ion-input value="{{text}}" type="text"></ion-input><br/>
+  <label>Formato: </label><ion-input value="{{format}}" type="text"></ion-input>
+</ion-content>
